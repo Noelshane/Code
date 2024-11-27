@@ -1,0 +1,490 @@
+Give html code to create a website with black bg and with 2 neon buttons called form and table , if table button clicked print <!DOCTYPE html>
+bjhihhkh<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grade 7 Mark List</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #141e30, #243b55);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0;
+      min-height: 100vh;
+    }
+
+    h1 {
+      margin-top: 20px;
+      font-size: 32px;
+      text-transform: uppercase;
+      text-shadow: 0 0 10px #00e6e6, 0 0 20px #00e6e6, 0 0 30px #00cccc;
+    }
+
+    table {
+      margin-top: 20px;
+      width: 95%;
+      border-collapse: collapse;
+      background: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    th, td {
+      padding: 12px 15px;
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #fff;
+    }
+
+    th {
+      background: rgba(0, 128, 255, 0.8);
+      text-shadow: 0 0 5px #ffffff;
+      font-size: 14px;
+      text-transform: uppercase;
+    }
+
+    tr:nth-child(even) {
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    tr:hover {
+      background: rgba(255, 255, 255, 0.2);
+      cursor: pointer;
+      transform: scale(1.02);
+      transition: 0.3s ease;
+    }
+
+    .highlight {
+      background: #ffc107;
+      color: #000;
+      font-weight: bold;
+    }
+
+    .header-row {
+      background: linear-gradient(to right, #ff5722, #ff9800);
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <h1>Grade 7 Mark List</h1>
+  <table>
+    <thead>
+      <tr class="header-row">
+        <th>Roll No</th>
+        <th>Name</th>
+        <th>Math</th>
+        <th>Science</th>
+        <th>English</th>
+        <th>History</th>
+        <th>Geography</th>
+        <th>Total Marks</th>
+        <th>Rank</th>
+      </tr>
+    </thead>
+    <tbody>
+      <script>
+        const students = [
+          { name: "Aarav", math: 95, science: 89, english: 92, history: 88, geography: 90 },
+          { name: "Aditya", math: 78, science: 71, english: 75, history: 73, geography: 70 },
+          { name: "Anay", math: 60, science: 55, english: 58, history: 53, geography: 52 },
+          { name: "Ayaan", math: 80, science: 75, english: 78, history: 77, geography: 74 },
+          { name: "Atharv", math: 58, science: 53, english: 55, history: 50, geography: 48 },
+          { name: "Arjun", math: 85, science: 80, english: 83, history: 81, geography: 80 },
+          { name: "Aarush", math: 92, science: 90, english: 94, history: 88, geography: 91 },
+          { name: "Ishaan", math: 70, science: 62, english: 65, history: 60, geography: 58 },
+          { name: "Kabir", math: 78, science: 71, english: 75, history: 73, geography: 70 },
+          { name: "Krishna", math: 76, science: 68, english: 72, history: 69, geography: 65 },
+          { name: "Rohan", math: 82, science: 85, english: 88, history: 79, geography: 80 },
+          { name: "Shaurya", math: 65, science: 60, english: 62, history: 58, geography: 55 },
+          { name: "Vivaan", math: 91, science: 85, english: 88, history: 84, geography: 89 },
+          { name: "Vihaan", math: 89, science: 82, english: 85, history: 83, geography: 84 },
+          { name: "Yash", math: 92, science: 91, english: 89, history: 94, geography: 93 },
+          { name: "Ritik", math: 72, science: 66, english: 71, history: 68, geography: 70 },
+          { name: "Irfan", math: 64, science: 61, english: 63, history: 60, geography: 65 },
+          { name: "Rajesh", math: 59, science: 56, english: 57, history: 55, geography: 58 },
+          { name: "Ankit", math: 82, science: 80, english: 85, history: 81, geography: 83 },
+          { name: "Karan", math: 76, science: 73, english: 78, history: 75, geography: 74 },
+          { name: "Piyush", math: 83, science: 80, english: 86, history: 84, geography: 85 },
+          { name: "Siddharth", math: 90, science: 88, english: 93, history: 89, geography: 92 },
+          { name: "Harshit", math: 74, science: 72, english: 75, history: 70, geography: 78 },
+          { name: "Jayesh", math: 60, science: 58, english: 61, history: 55, geography: 62 },
+          { name: "Nikhil", math: 68, science: 64, english: 67, history: 62, geography: 65 },
+          { name: "Sameer", math: 81, science: 79, english: 83, history: 82, geography: 80 },
+          { name: "Varun", math: 73, science: 70, english: 74, history: 72, geography: 71 },
+          { name: "Raghav", math: 88, science: 86, english: 90, history: 85, geography: 87 },
+          { name: "Keshav", math: 77, science: 75, english: 78, history: 74, geography: 76 },
+          { name: "Tanishq", math: 85, science: 83, english: 88, history: 84, geography: 86 }
+        ];
+
+        students.forEach(s => s.total = s.math + s.science + s.english + s.history + s.geography);
+        students.sort((a, b) => b.total - a.total);
+
+        students.forEach((s, i) => {
+          document.write(`
+            <tr>
+              <td>${i + 1}</td>
+              <td>${s.name}</td>
+              <td>${s.math}</td>
+              <td>${s.science}</td>
+              <td>${s.english}</td>
+              <td>${s.history}</td>
+              <td>${s.geography}</td>
+              <td class="highlight">${s.total}</td>
+              <td>${i + 1}</td>
+            </tr>
+          `);
+        });
+      </script>
+    </tbody>
+  </table>
+</body>
+</html>
+ This code without any error and if  form button clicked print <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Styled Neon Portrait Form</title>
+  <style>
+    @keyframes rainbow {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0; padding: 0;
+      background: #0d0d0d;
+      display: flex; justify-content: center; align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: linear-gradient(135deg, #ff00ff, #00ffff, #ffff00, #ff0000);
+      background-size: 400% 400%;
+      animation: rainbow 2s linear infinite;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+      width: 400px; padding: 20px; text-align: center;
+    }
+
+    .photo-frame {
+      border: 10px double #fff; border-radius: 15px; margin-bottom: 20px;
+      overflow: hidden;
+    }
+
+    .form h2 {
+      font-size: 24px; color: #000; margin-bottom: 15px;
+    }
+
+    label, .checkbox-group label {
+      color: #000; display: block; margin-top: 10px; font-weight: bold;
+    }
+
+    input, select {
+      width: 100%; padding: 8px; margin-top: 5px;
+      border: 1px solid #ccc; border-radius: 5px;
+      background: #fff; color: #000; outline: none;
+    }
+
+    input:focus, select:focus { border-color: #ff00ff; }
+
+    .checkbox-group label { display: inline-block; margin-right: 10px; }
+
+    button {
+      width: 100%; padding: 10px; margin-top: 15px;
+      border: none; border-radius: 5px; font-size: 16px;
+      background: linear-gradient(90deg, #ff0000, #ff00ff, #00ffff, #ffff00);
+      background-size: 300% 300%; color: white; cursor: pointer;
+      animation: rainbow 1.5s linear infinite;
+    }
+
+    button:hover { transform: scale(1.05); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="photo-frame">
+      <img src="https://via.placeholder.com/150" alt="Portrait" style="width: 100%; height: auto;">
+    </div>
+    <form id="infoForm" class="form" onsubmit="submitForm(event)">
+      <h2>Personal Information</h2>
+      <label>First Name: <input type="text" name="firstName" required></label>
+      <label>Last Name: <input type="text" name="lastName" required></label>
+      <label>Age: <input type="text" name="age" required></label>
+      <label>Favorite Subjects:</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" value="Math"> Math</label>
+        <label><input type="checkbox" value="Science"> Science</label>
+        <label><input type="checkbox" value="History"> History</label>
+        <label><input type="checkbox" value="English"> English</label>
+      </div>
+      <label>Date of Birth:</label>
+      <div>
+        <select name="day"><option disabled selected>Day</option></select>
+        <select name="month"><option disabled selected>Month</option></select>
+        <select name="year"><option disabled selected>Year</option></select>
+      </div>
+      <label>Father's Name: <input type="text" name="fatherName" required></label>
+      <label>Address: <input type="text" name="address" required></label>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  <script>
+    // Populate date options
+    const daySelect = document.querySelector('[name="day"]');
+    const monthSelect = document.querySelector('[name="month"]');
+    const yearSelect = document.querySelector('[name="year"]');
+    for (let i = 1; i <= 31; i++) daySelect.innerHTML += `<option>${i}</option>`;
+    ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+      .forEach((m, i) => monthSelect.innerHTML += `<option value="${i + 1}">${m}</option>`);
+    for (let i = 1900; i <= 2025; i++) yearSelect.innerHTML += `<option>${i}</option>`;
+
+    // Form submission
+    function submitForm(event) {
+      event.preventDefault();
+      alert("Form Submitted!");
+      document.getElementById("infoForm").reset();
+    }
+  </script>
+</body>
+</html>
+ Without error and create another button in rainbow gradient with text Itachi and if that clicked print <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Itachi Uchiha Juan</title>
+  <style>
+    /* General Body Styles */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+      background: radial-gradient(circle, #000 20%, #0ff 90%);
+    }
+
+    /* Header Styling */
+    header {
+      text-align: center;
+      padding: 20px;
+      background: linear-gradient(45deg, blue, black);
+      text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+    }
+
+    header h1 {
+      font-size: 3em;
+      margin: 0;
+    }
+
+    header p {
+      font-size: 1.2em;
+    }
+
+    /* Section Styling */
+    section {
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 900px;
+      border: 2px solid #0ff;
+      border-radius: 10px;
+      box-shadow: 0 0 20px #0ff;
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    h2 {
+      font-size: 2em;
+      text-align: center;
+      text-shadow: 0 0 5px #0ff;
+    }
+
+    /* Gallery Styles */
+    #images {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    #images img {
+      width: 30%; /* Default size for all images */
+      height: auto;
+      border: 2px solid #fff;
+      border-radius: 10px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    /* Make the second and third images wider */
+    #images img:nth-child(2),
+    #images img:nth-child(3) {
+      width: 40%;
+    }
+
+    #images img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 20px #0ff;
+    }
+
+    /* FAQ Section */
+    .faq {
+      margin: 20px 0;
+    }
+
+    .faq .question {
+      font-weight: bold;
+      margin: 10px 0;
+      cursor: pointer;
+      padding: 10px;
+      border: 1px solid #0ff;
+      border-radius: 5px;
+      background-color: #111;
+      text-shadow: 0 0 5px #0ff;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .faq .question:hover {
+      background-color: #0ff;
+      color: #000;
+    }
+
+    .faq .answer {
+      margin: 5px 0 15px;
+      padding: 10px;
+      border: 1px solid #fff;
+      border-radius: 5px;
+      display: none;
+      background-color: #222;
+    }
+
+    /* Footer Styling */
+    footer {
+      text-align: center;
+      padding: 10px;
+      background: #000;
+      border-top: 2px solid #0ff;
+      box-shadow: 0 -5px 10px #0ff;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <h1>Itachi Uchiha Juan</h1>
+    <p>The Legendary Story of Itachi Uchiha</p>
+  </header>
+
+  <!-- Story Section -->
+  <section id="story">
+    <h2>The Story of Itachi</h2>
+    <p>
+      Itachi Uchiha, a genius of the Uchiha Clan, is known for his incredible strength, intelligence, and tragic life story. 
+      From his youth, Itachi demonstrated unparalleled talent, achieving milestones at a young age. However, his life was 
+      filled with heartbreak as he made the ultimate sacrifice to ensure peace for his village.
+    </p>
+    <p>
+      As a secret protector, Itachi took on the burden of being branded a traitor, only to safeguard his younger brother Sasuke. 
+      His actions left a legacy of loyalty and dedication to peace, cementing his place as one of the most iconic shinobi in history.
+    </p>
+    <p>
+      This is a tale of sacrifice, heroism, and love, where Itachi's choices continue to inspire and captivate generations of fans.
+    </p>
+<h1>Life Story</h1>
+<p>Itachi Uchiha was born into the prestigious Uchiha clan in the Hidden Leaf Village (Konohagakure). From a very young age, it was clear that he was a prodigy. His intelligence and natural combat abilities surpassed his peers, and by the age of seven, he had already mastered many advanced techniques, showing a level of maturity and skill rare even among the adults in his clan. His father, Fugaku Uchiha, and the rest of the clan had high expectations of him, but it was Itachi's unwavering sense of duty and love for his village that would shape his future. At the age of 13, he became the youngest ever ANBU captain, a testament to his leadership and combat prowess. However, Itachi’s adventures were marked by increasingly difficult choices. The Hidden Leaf Village was on the brink of civil war, with the Uchiha clan planning a coup to take control. Itachi was ordered by the village's elders to massacre his own clan in order to prevent a full-scale war. The weight of this decision haunted him for the rest of his life, but he carried out the task, sparing only his younger brother, Sasuke, with the hope that Sasuke would one day become strong enough to avenge the clan and understand the reasons behind his actions. After the massacre, Itachi became an outcast, joining the criminal organization Akatsuki as a rogue ninja. Despite being labeled a traitor, Itachi secretly worked to protect his village while maintaining his role as an Akatsuki member. His life was further burdened by a terminal illness, which gradually weakened him. Itachi’s final adventure occurred during his confrontation with Sasuke, where he revealed the truth of his sacrifices and intentions. In their final battle, Itachi intentionally allowed Sasuke to defeat him, passing on his knowledge and revealing his deepest secrets, including his enduring love for his brother. Itachi died with a smile, content that Sasuke would live on and that the truth about his actions would eventually come to light. His death marked the tragic end of a hero’s journey—one filled with sacrifice, love, and the quest for peace.</p>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="images">
+
+<img src="https://wallpapercave.com/wp/wp7158525.jpg" alt="Itachi Image 1" width="100" height="auto">
+  <img src="https://wallpapercave.com/wp/wp9364432.jpg" alt="Itachi Image 2" width="100" height="auto">
+  <img src="https://wallpaperaccess.com/full/5649362.jpg" alt="Itachi Image 3" width="75" height="50">
+
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq">
+    <h2>FAQs</h2>
+<div class="faq">
+  <div class="question">Who is Itachi Uchiha?</div>
+  <div class="answer">
+    Itachi Uchiha was a prodigy of the Uchiha Clan and a shinobi of the Hidden Leaf Village. He is best known for his sacrifice to protect the village and his younger brother Sasuke.
+  </div>
+
+  <div class="question">What made Itachi a prodigy?</div>
+  <div class="answer">
+    Itachi showed incredible talent from a young age, mastering advanced ninja techniques and becoming the youngest ANBU Captain in the history of the Hidden Leaf Village at just 13 years old.
+  </div>
+
+  <div class="question">Why did Itachi kill his clan?</div>
+  <div class="answer">
+    Itachi killed his clan under the orders of the Hidden Leaf elders to prevent a coup that could have led to a devastating war. However, he spared his brother Sasuke.
+  </div>
+
+  <div class="question">What was Itachi's relationship with Sasuke?</div>
+  <div class="answer">
+    Itachi loved his younger brother Sasuke deeply. Despite his actions, Itachi's ultimate goal was to protect Sasuke and ensure his safety and future.
+  </div>
+
+  <div class="question">Why did Itachi join the Akatsuki?</div>
+  <div class="answer">
+    Itachi joined the Akatsuki as a double agent. He wanted to monitor the organization and keep an eye on threats to the Hidden Leaf Village while maintaining his cover as a rogue ninja.
+  </div>
+
+  <div class="question">What is Itachi’s most iconic jutsu?</div>
+  <div class="answer">
+    Itachi's most iconic jutsu is the Amaterasu, the inextinguishable black flames. He also mastered Tsukuyomi, a powerful genjutsu, and Susano'o, the ultimate defense technique.
+  </div>
+
+  <div class="question">What is the meaning behind Itachi's crow symbolism?</div>
+  <div class="answer">
+    Itachi's use of crows symbolizes his elusive and mysterious nature. The crows are also part of his genjutsu and a representation of his vigilance and foresight.
+  </div>
+
+  <div class="question">What was Itachi's illness?</div>
+  <div class="answer">
+    Itachi suffered from a terminal illness that weakened him significantly. Despite his condition, he continued to fight and protect his loved ones.
+  </div>
+
+  <div class="question">Why did Itachi lose to Sasuke?</div>
+  <div class="answer">
+    Itachi deliberately lost to Sasuke during their final battle. His intention was to push Sasuke to grow stronger and free him from the cycle of hatred.
+  </div>
+
+  <div class="question">What is Itachi’s role in Naruto's story?</div>
+  <div class="answer">
+    Itachi serves as a tragic hero in Naruto's story. His actions and revelations profoundly impact Sasuke’s journey and the overall narrative of peace and conflict in the ninja world.
+  </div>
+
+  <div class="question">What is Itachi's Mangekyou Sharingan?</div>
+  <div class="answer">
+    Itachi's Mangekyou Sharingan granted him access to powerful techniques like Tsukuyomi, Amaterasu, and Susano'o. It activated after witnessing the death of his closest friend, Shisui Uchiha.
+  </div>
+
+  <div class="question">Who was Shisui Uchiha?</div>
+  <div class="answer">
+    Shisui Uchiha was Itachi’s closest friend and a highly skilled ninja of the Uchiha Clan. His suicide and sacrifice deeply influenced Itachi’s life and decisions.
+  </div>
+
+  <div class="question">How did Itachi die?</div>
+  <div class="answer">
+    Itachi died during his final battle with Sasuke. His death was a result of his terminal illness and his intention to pass on his powers and knowledge to Sasuke.
+  </div>
+
+  <div class="question">What was Itachi’s ultimate goal?</div>
+  <div class="answer">
+    Itachi’s ultimate goal was to protect the Hidden Leaf Village and his brother Sasuke at all costs, even if it meant sacrificing his reputation and life.
+  </div>
+
+  <div class="question">Did Itachi hate Sasuke?</div>
+  <div class="answer">
+    No, Itachi never hated Sasuke. Every action Itachi took, no matter how cruel it seemed, was for Sasuke’s protection and future.
+  </div>
+
+  <div class="question">Why is Itachi considered a tragic hero?</div>
+  <div class="answer">
+    Itachi is considered a tragic hero because of the sacrifices he made for the greater good. He chose to bear the burden of being mis
